@@ -1,13 +1,12 @@
+#include <stdio.h>
 #include <unistd.h>
-#include <sys/syscall.h>
 /**
  * main - Entry point
- *
- * Return: Always 1 (Success)
+ * Return:1
  */
 int main(void)
 {
-	const char quest[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	syscall(SYS_write, 1, quest, sizeof(quest));
-	return 1;
+	char ch[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	write(2, ch, sizeof(ch));
+	return (1);
 }
