@@ -1,42 +1,51 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
- * main - Prints numbers between 012 to 789.
- *
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Numbers must be separated by ,, followed by a space
+ * The two digits must be different
+ * 01 and 10 are considered the same combination of the two digits 0 and 1
+ * Print only the smallest combination of two digits
+ * Numbers should be printed in ascending order, with two digits
+ * You can only use the putchar function
+ * (every other function (printf, puts, etc…) is forbidden)
+ * You can only use putchar five times maximum in your code
+ * You are not allowed to use any variable of type char
+ * All your code should be in the main function
+ * Return: 0
  */
 int main(void)
 {
-	int i, e, g;
+	int c;
+	int d;
+	int e = 0;
 
-	i = 48;
-	e = 48;
-	g = 48;
-
-	while (e < 58)
+	while (e < 10)
 	{
-		i = 48;
-		while (i < 58)
+		d = 0;
+		while (d < 10)
 		{
-			g = 48;
-			while (g < 58)
+			c = 0;
+			while (c < 10)
 			{
-				if (e != i && e != g && i != g && e < i && i < g)
+				if (c != d && d != e && e < d && d < c)
 				{
-					putchar(e);
-					putchar(i);
-					putchar(g);
-					putchar(44);
-					putchar(32);
-					if (i == 56 && e == 55 && g == 57)
-					{
-						break;
+					putchar('0' + e);
+					putchar('0' + d);
+					putchar('0' + c);
 
+					if (c + d + e != 9 + 8 + 7)
+					{
+						putchar(',');
+						putchar(' ');
 					}
 				}
-				g++;
+
+				c++;
 			}
-			i++;
+			d++;
 		}
 		e++;
 	}
